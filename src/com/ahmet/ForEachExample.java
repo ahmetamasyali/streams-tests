@@ -9,9 +9,9 @@ public class ForEachExample
 {
     public static void main(String[] args)
     {
-        Person person1 = new Person("Burak");
-        Person person2 = new Person("Mehmet");
-        Person person3 = new Person("Ahmet");
+        Person person1 = new Person("Burak", 11);
+        Person person2 = new Person("Mehmet", 25);
+        Person person3 = new Person("Ahmet", 67);
 
         List<Person> userList = Arrays.asList(person1, person2, person3);
 
