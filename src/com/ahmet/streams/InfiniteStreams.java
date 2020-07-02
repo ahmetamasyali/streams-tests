@@ -1,4 +1,4 @@
-package com.ahmet;
+package com.ahmet.streams;
 
 import java.util.stream.Stream;
 

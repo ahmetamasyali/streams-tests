@@ -19,6 +19,18 @@ public class AnonymousInnerClass
         //Runnable runnableLambda = () -> System.out.println("Hello World With Lamda");
         //runnableLambda.run();
 
+
+        //dont
+        //Runnable runnableLambda = () -> {
+            //System.out.println("Hello World With Lamda");
+           // System.out.println("Hello World With Lamda");
+         //}
+        //runnableLambda.run();
+
+
+
+        // (Parameters) -> { Body }
+        // (Parameters) -> Implementation
     }
 
 }

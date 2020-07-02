@@ -7,7 +7,7 @@ public class Timer
 
     public static void withTime(Runnable runnable)
     {
-        long time =  new Date().getTime();
+        long time =  System.nanoTime();
 
         System.out.println("Started : ");
         try
@@ -16,7 +16,7 @@ public class Timer
         }
         finally
         {
-            long finishTime =  new Date().getTime();
+            long finishTime =  System.nanoTime();
 
             System.out.println("Ended : " + (finishTime - time));
         }

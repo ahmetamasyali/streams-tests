@@ -11,9 +11,9 @@ public class MethodReference
     {
         //print the name of even aged persons
 
-        Person person1 = new Person("Burak", 20);
-        Person person2 = new Person("Mehmet", 10);
-        Person person3 = new Person("Ahmet", 15);
+        Person person1 = new Person("Özgür", 11);
+        Person person2 = new Person("Doruk", 25);
+        Person person3 = new Person("Utku", 67);
 
         List<Person> userList = Arrays.asList(person1, person2, person3);
 
@@ -26,11 +26,12 @@ public class MethodReference
         }
 
 
+    }
+}
 
-
-        /*userList.stream()
+    /*    userList.stream()
                 .filter(p -> p.getAge() % 2 == 0)
-                .forEach(p -> System.out.println(p.getName()));
+        .forEach(p -> System.out.println(p.getName()));
 
         userList.stream()
                 .filter(Person::isAgeEven)
@@ -39,6 +40,5 @@ public class MethodReference
         userList.stream()
                 .filter(Person::isAgeEvenStatic)
                 .forEach(System.out::println);*/
-    }
 
-}
+
