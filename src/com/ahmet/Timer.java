@@ -18,7 +18,7 @@ public class Timer
         {
             long finishTime =  System.nanoTime();
 
-            System.out.println("Ended : " + (finishTime - time) / 100000000.0 + " seconds");
+            System.out.println("Ended : " + (finishTime - time) / 1000000000.0 + " seconds");
         }
     }
 }

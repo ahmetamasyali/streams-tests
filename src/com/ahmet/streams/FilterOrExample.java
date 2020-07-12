@@ -1,7 +1,6 @@
 package com.ahmet.streams;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -28,5 +27,13 @@ public class FilterOrExample
                 .forEach(System.out::println);
 
         //Predicate.not
+
+
+        personList.stream()
+                .filter(((Predicate<Person>) p -> p.getAge() > 10)
+                        .or(p -> p.getName().startsWith("N"))
+                        .and(p -> p.getName().startsWith("U"))
+                        .negate())
+                .forEach(System.out::println);
     }
 }

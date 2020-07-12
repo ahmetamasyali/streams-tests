@@ -39,6 +39,15 @@ public class FilterMapSortExample
 
         List<Person> personList = Arrays.asList(person1, person2, person3, person4);
 
+
+        //filter  Stream<T> -> Stream<T>
+        //map  Stream<T> -> Stream<T>
+        //sort  Stream<T> -> Stream<T>
+
+        //filter -> stream elemanlarından koşula uymayanları eler
+        //map -> stream elemanları üzerinde dönüşüm yapar
+        //sort -> stream elemanlarını sıralar
+
         //yaşı 15 ten büyük olanlar ve ismi E ile başlayanların yaşı
 
         for(Person person : personList)
@@ -48,6 +57,7 @@ public class FilterMapSortExample
                 System.out.println(person.getAge());
             }
         }
+
 
 
         //yaşa göre sırala
@@ -61,12 +71,9 @@ public class FilterMapSortExample
 
 
 
-        //filter  Stream<T> -> Stream<T>
-        //map  Stream<T> -> Stream<T>
-        //sort  Stream<T> -> Stream<T>
 
-        //intermediate functions
-        //terminal functions
+        //intermediate functions -> map,sort,filter,flatmap
+        //terminal functions  -> foreach,reduce,collect,sum,count
 
         //dont!
         personList.stream().filter(person -> person.getAge() > 1).sorted(Comparator.comparing(Person::getAge).reversed()).map(Person::getAge).forEach(System.out::println);
