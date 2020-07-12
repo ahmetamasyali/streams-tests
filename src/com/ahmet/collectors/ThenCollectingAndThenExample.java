@@ -16,7 +16,7 @@ import java.util.Set;
 
 import com.ahmet.Person;
 
-public class CollectingAndThenExample
+public class ThenCollectingAndThenExample
 {
     public static void main(String[] args)
     {

@@ -13,6 +13,7 @@ infinite streams
 reduce
 shared mutability
 streams performance
+parallel streams
 
 collectors
 toList vs
