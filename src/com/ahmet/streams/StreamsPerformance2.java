@@ -35,12 +35,12 @@ public class StreamsPerformance2
         //More Thread - Thread Pool
 
 
-        Timer.withTime(() -> {
-            System.out.println(numberList.stream()
-                    .filter(StreamsPerformance2::isEven)
-                    .filter(StreamsPerformance2::isBiggerThenNine)
-                    .count());
-            });
+//        Timer.withTime(() -> {
+//            System.out.println(numberList.stream()
+//                    .filter(StreamsPerformance2::isEven)
+//                    .filter(StreamsPerformance2::isBiggerThenNine)
+//                    .count());
+//            });
 
 
     }
