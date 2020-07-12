@@ -19,7 +19,7 @@ public class MethodReference
 
         for (Person person : userList)
         {
-            if (person.getAge() % 2 == 0)
+            if (Person.isAgeEvenStatic(person))
             {
                 System.out.println(person.getName());
             }
@@ -29,16 +29,5 @@ public class MethodReference
     }
 }
 
-    /*    userList.stream()
-                .filter(p -> p.getAge() % 2 == 0)
-        .forEach(p -> System.out.println(p.getName()));
-
-        userList.stream()
-                .filter(Person::isAgeEven)
-                .forEach(System.out::println);
-
-        userList.stream()
-                .filter(Person::isAgeEvenStatic)
-                .forEach(System.out::println);*/
 
 
