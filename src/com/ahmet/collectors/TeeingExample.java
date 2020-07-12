@@ -25,7 +25,9 @@ public class TeeingExample
 {
     public static void main(String[] args)
     {
-        //group persons ages by name
+        // ismi eren olanların yaşlarını topla,
+        // ismi Özgür olanların sayısını al
+        //bir map'e at
 
         Person person1 = new Person("Özgür", 11);
         Person person2 = new Person("Doruk", 25);
@@ -41,8 +43,8 @@ public class TeeingExample
 
         Map<Long, Long> map = personList.stream()
                 .collect(teeing(
-                        filtering(p -> p.getName().equals("Eren"), mapping(Person::getAge, summingLong(Integer::longValue))),
-                        filtering(p -> p.getName().equals("Eren"), mapping(Person::getAge, counting())),
+                        filtering(p -> p.getName().equals("Eren"), summingLong(Person::getAge)),
+                        filtering(p -> p.getName().equals("Özgür"), counting()),
                         Map::of
                 ));
 

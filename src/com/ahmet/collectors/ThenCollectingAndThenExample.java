@@ -20,8 +20,6 @@ public class ThenCollectingAndThenExample
 {
     public static void main(String[] args)
     {
-        //group persons ages by name
-
         Person person1 = new Person("Özgür", 11);
         Person person2 = new Person("Doruk", 25);
         Person person3 = new Person("Utku", 67);
@@ -32,14 +30,21 @@ public class ThenCollectingAndThenExample
 
 
 
+        // isme göre grupla sayıları al, 2 ile çarp
+
         //collectingAndThen (Collector, Lambda)
 
         Map<String, Long> countByNames = personList.stream()
                 .collect(groupingBy(Person::getName, counting()));
 
+        System.out.print(countByNames);
 
-        Map<String, Integer> countByNamesInteger = personList.stream()
-                .collect(groupingBy(Person::getName, collectingAndThen(counting(), Long::intValue)));
+
+
+        Map<String, Long> countByNames2 = personList.stream()
+                .collect(groupingBy(Person::getName, collectingAndThen(counting(), c -> c*2)));
+
+
     }
 
 }
