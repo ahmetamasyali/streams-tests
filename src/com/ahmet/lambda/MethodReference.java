@@ -17,15 +17,9 @@ public class MethodReference
 
         List<Person> userList = Arrays.asList(person1, person2, person3);
 
-        for (Person person : userList)
-        {
-            if (Person.isAgeEvenStatic(person))
-            {
-                System.out.println(person.getName());
-            }
-        }
+        userList.forEach(p -> Person.isAgeEvenStatic(p));
 
-
+        userList.forEach(p -> p.isAgeEven());
     }
 }
 
