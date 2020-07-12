@@ -7,6 +7,12 @@ public class LambdaInterfaceExample
         double result1 = sum(5.1, 3.7, (a, b) -> a + b);
         System.out.println(result1);
 
+
+        ////dont!
+//        sum(5.1, 3.7, (a, b) -> {
+//            return a + b;
+//         });
+
     }
 
     public static double sum(double a, double b , Calculate calculate)

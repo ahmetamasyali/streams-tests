@@ -4,6 +4,10 @@ public class AnonymousInnerClass
 {
     public static void main(String[] args)
     {
+        //lambda - Java 8
+        //functional programming'e ilk adım
+        //herhangi bir class'a ait olmayan fonksiyon yaratmamıza imkan verir
+
         Runnable runnable = new Runnable()
         {
             @Override
