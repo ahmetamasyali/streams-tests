@@ -2,6 +2,8 @@ package com.ahmet.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 import com.ahmet.Person;
@@ -10,7 +12,6 @@ public class ReduceExample
 {
     public static void main(String[] args)
     {
-
         Person person1 = new Person("Utku", 20);
         Person person2 = new Person("Doruk",10);
         Person person3 = new Person("Özgür", 15);
@@ -40,6 +41,15 @@ public class ReduceExample
         //Reduce List<T> -> R
 
 
+//        reduce("", String::concat)
+//        reduce(true, (a,b) -> a&&b)
+//        reduce(false, (a,b) -> a||b)
+//        reduce(Collections.emptySet(),
+//                (a,b)->{ Set<X> s=new HashSet<>(a); s.addAll(b); return s; })
+//        reduce(Double.POSITIVE_INFINITY, Math::min)
+//        reduce(Double.NEGATIVE_INFINITY, Math::max)
+
+        //collect
     }
 
 
@@ -51,10 +61,6 @@ public class ReduceExample
      */
 
 
-    /*System.out.println( personList.stream()
-                .map(Person::getName)
-                .reduce("", String::concat));*/
-
 
 
 
@@ -65,18 +71,9 @@ public class ReduceExample
 
         System.out.println(sumOfAges);
 
-        //collect
+
      */
 }
 
 
 
-
-    /*
-
-        personList.stream()
-                .filter(person -> person.getAge() > 10)
-                .sorted()
-                .map(p -> p.getName() + " " + p.getAge())
-
-                .forEach(System.out::println);*/

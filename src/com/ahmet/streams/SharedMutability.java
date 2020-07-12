@@ -13,6 +13,8 @@ public class SharedMutability
     {
         Stream<Integer> numbers = Stream.iterate(2, n -> n + 1);
 
+        // ilk 1000 asal sayıyı bir set'e aktar
+
         Set<Integer> primeNumbersSet = new HashSet<>();
 
         numbers.filter(SharedMutability::isPrime)
