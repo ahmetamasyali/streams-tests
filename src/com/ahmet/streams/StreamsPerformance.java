@@ -20,6 +20,9 @@ public class StreamsPerformance
 
         //Lazy Evaluation
 
+        //short circuiting
+        // if ( isEven && isBiggerThenNine)
+
         // Lazy Parallel ?
 
         System.out.println(personList.stream()
