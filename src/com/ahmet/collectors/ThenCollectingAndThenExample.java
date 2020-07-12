@@ -33,6 +33,9 @@ public class ThenCollectingAndThenExample
         // isme göre grupla sayıları al, 2 ile çarp
 
         //collectingAndThen (Collector, Lambda)
+        //groupingBy (Lambda, Collector)
+        //mapping (Lambda, Collector)
+        //filtering (Lambda, Collector)
 
         Map<String, Long> countByNames = personList.stream()
                 .collect(groupingBy(Person::getName, counting()));

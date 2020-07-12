@@ -44,6 +44,8 @@ public class GroupingByExample
 
         //mapping (Lambda, Collector)
 
+        //filtering (Lambda, Collector)
+
         Map<String, Set<Integer>> nameMapStream = personList.stream()
                 .collect(groupingBy(Person::getName,
                         mapping(Person::getAge, toSet())));

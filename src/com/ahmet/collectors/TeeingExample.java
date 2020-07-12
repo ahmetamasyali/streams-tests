@@ -40,6 +40,10 @@ public class TeeingExample
 
 
         //teeing ( Collector, Collector, Lambda)
+        //collectingAndThen (Collector, Lambda)
+        //groupingBy (Lambda, Collector)
+        //mapping (Lambda, Collector)
+        //filtering (Lambda, Collector)
 
         Map<Long, Long> map = personList.stream()
                 .collect(teeing(

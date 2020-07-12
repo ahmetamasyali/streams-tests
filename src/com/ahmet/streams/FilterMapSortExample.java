@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.ahmet.Person;
 
-public class FilterSortMapExample
+public class FilterMapSortExample
 {
     public static void main(String[] args)
     {
@@ -39,25 +39,25 @@ public class FilterSortMapExample
 
         List<Person> personList = Arrays.asList(person1, person2, person3, person4);
 
-
-        //yaşa göre sırala
-
-
-        //yaşı 15 ten büyük olanlar ve ismi E ile başlayanlar
+        //yaşı 15 ten büyük olanlar ve ismi E ile başlayanların yaşı
 
         for(Person person : personList)
         {
             if(person.getAge() > 15 && person.getName().startsWith("E"))
             {
-                System.out.println(person);
+                System.out.println(person.getAge());
             }
         }
 
-        personList.stream()
+
+        //yaşa göre sırala
+
+
+       /* personList.stream()
                 .filter(person -> person.getAge() > 1)
                 .sorted(Comparator.comparing(Person::getAge).reversed())
                 .map(Person::getAge)
-                .forEach(System.out::println);
+                .forEach(System.out::println);*/
 
 
 
