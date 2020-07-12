@@ -48,7 +48,7 @@ public class StreamsPerformance2
 
     public static boolean isEven(int num)
     {
-        System.out.println("checking number is even: " + num);
+        //System.out.println("checking number is even: " + num);
         return num % 2 == 0;
     }
 
