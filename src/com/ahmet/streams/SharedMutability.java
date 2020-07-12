@@ -17,6 +17,7 @@ public class SharedMutability
 
         Set<Integer> primeNumbersSet = new HashSet<>();
 
+        //dont
         numbers.filter(SharedMutability::isPrime)
                 .limit(1000)
                 .forEach(primeNumbersSet::add);
