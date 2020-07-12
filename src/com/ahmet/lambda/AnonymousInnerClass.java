@@ -16,16 +16,6 @@ public class AnonymousInnerClass
         runnable.run();
 
 
-        //Runnable runnableLambda = () -> System.out.println("Hello World With Lamda");
-        //runnableLambda.run();
-
-
-        //dont
-        //Runnable runnableLambda = () -> {
-            //System.out.println("Hello World With Lamda");
-           // System.out.println("Hello World With Lamda");
-         //}
-        //runnableLambda.run();
 
 
 
@@ -36,3 +26,24 @@ public class AnonymousInnerClass
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+//Runnable runnableLambda = () -> System.out.println("Hello World With Lamda");
+//runnableLambda.run();
+
+
+//dont
+//Runnable runnableLambda = () -> {
+//System.out.println("Hello World With Lamda");
+// System.out.println("Hello World With Lamda");
+//}
+//runnableLambda.run();

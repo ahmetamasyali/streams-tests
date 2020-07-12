@@ -29,58 +29,26 @@ public class TeeingExample
 
         Person person1 = new Person("Özgür", 11);
         Person person2 = new Person("Doruk", 25);
-        Person person3 = new Person("Utku", 67);
+        Person person3 = new Person("Eren", 67);
         Person person4 = new Person("Eren", 25);
         Person person5 = new Person("Ömer", 39);
 
         List<Person> personList = Arrays.asList(person1, person2, person3, person4, person5);
 
-        Map<String, Set<Integer>> nameMap = new HashMap<>();
-        for(Person person : personList)
-        {
-            if(!nameMap.containsKey(person.getName()))
-            {
-                nameMap.put(person.getName(), new HashSet<>());
-            }
-
-            nameMap.get(person.getName()).add(person.getAge());
-        }
-
-        for(String key : nameMap.keySet())
-        {
-            System.out.println("name :"+ key + ": " + nameMap.get(key));
-        }
 
 
+        //teeing ( Collector, Collector, Lambda)
 
-        Result result = personList.stream()
+        Map<Long, Long> map = personList.stream()
                 .collect(teeing(
                         filtering(p -> p.getName().equals("Eren"), mapping(Person::getAge, summingLong(Integer::longValue))),
                         filtering(p -> p.getName().equals("Eren"), mapping(Person::getAge, counting())),
-                        Result::new
+                        Map::of
                 ));
 
-        System.out.println(result);
+        System.out.println(map);
     }
 
 
 
-}
-
-class Result
-{
-    long sum;
-    long count;
-
-    public Result(long sum, Long count)
-    {
-        this.sum = sum;
-        this.count = count;
-    }
-
-    @Override
-    public String toString()
-    {
-        return sum + " " + count;
-    }
 }

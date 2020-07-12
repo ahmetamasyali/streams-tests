@@ -14,7 +14,7 @@ public class NoneAnyMatchExample
         Person person3 = new Person("Özgür", 15);
         Person person4 = new Person("Eren", 24);
 
-        List<Person> personList = Arrays.asList(person1, person2, person3, person4);
+        List<Person> personList = List.of(person1, person2, person3, person4);
 
 
         boolean any20YearsOldUtkuExit = false;

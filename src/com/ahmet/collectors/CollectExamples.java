@@ -25,16 +25,30 @@ public class CollectExamples
                 .map(Person::getName)
                 .collect(Collectors.toList());
 
+        //toSet
+
+        //toUnmodifyableList
+
+        personList.stream()
+                .collect(Collectors.toMap(Person::getName, Person::getAge));
+        //toMap
+
         int sum = personList.stream()
                 .map(Person::getAge)
                 .collect(Collectors.summingInt(Integer::intValue));
+        //sum
 
         System.out.println(sum);
 
 
+        System.out.println(personList.stream()
+                .map(Person::getName)
+                .collect(Collectors.joining(",")));
+
         personList.stream()
                 .map(Person::getName)
-                .collect(Collectors.joining());
+                .collect(Collectors.counting());
+        //count
     }
 
 }

@@ -32,6 +32,8 @@ public class CollectingAndThenExample
 
 
 
+        //collectingAndThen (Collector, Lambda)
+
         Map<String, Long> countByNames = personList.stream()
                 .collect(groupingBy(Person::getName, counting()));
 

@@ -40,7 +40,9 @@ public class GroupingByExample
             System.out.println("name :"+ key + ": " + nameMap.get(key));
         }
 
+        //groupingBy (Lambda, Collector)
 
+        //mapping (Lambda, Collector)
 
         Map<String, Set<Integer>> nameMapStream = personList.stream()
                 .collect(groupingBy(Person::getName,

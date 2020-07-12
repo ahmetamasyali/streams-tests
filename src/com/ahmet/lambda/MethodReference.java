@@ -11,7 +11,7 @@ public class MethodReference
     {
         //print the name of even aged persons
 
-        Person person1 = new Person("Özgür", 11);
+        Person person1 = new Person("Özgür", 12);
         Person person2 = new Person("Doruk", 25);
         Person person3 = new Person("Utku", 67);
 

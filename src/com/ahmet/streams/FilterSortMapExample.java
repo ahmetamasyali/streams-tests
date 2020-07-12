@@ -12,12 +12,25 @@ public class FilterSortMapExample
     {
 
         //  Java 8'de tanıtılan Stream API, nesne koleksiyonlarını işlemek için kullanılır.
-        //  Bir akış, istenen sonucu üretmek için pipeline'a çeşitli methodlar eklenir
-        //  Streamler orijinal veri yapısını değiştirmez,
-        //  yalnızca pipeline methodlarına göre üretilen sonuç değişir
+
+        //  Bir stream ile istenen sonucu üretmek bir pipeline oluşturup buna fonksiyonlar ekleriz
+
+        //  Streamler orijinal veri yapısını değiştirmez,yalnızca pipeline methodlarına göre üretilen sonuç değişir
 
         //external iterasyon
         //internal iterasyon
+
+
+        //Avantajları
+        //1- Döngülerle lojiği anlamak zordur, streamler daha anlaşılırdır
+        //2- Kısa ve özdür
+        //3- Lambda ve methed referansı ile birlikte doğal bir şekilde kullanılabilir
+        //4- Paralel Streamler
+
+        //DezAvantajları
+        // 1- Performans - CPU ve Memory
+        // 2- Alışık değilseniz okuması zor olabilir
+        // 3- Debug etmesi zor
 
         Person person1 = new Person("Utku", 20);
         Person person2 = new Person("Doruk",10);
@@ -32,7 +45,7 @@ public class FilterSortMapExample
 
         //yaşı 15 ten büyük olanlar ve ismi E ile başlayanlar
 
-        for(Person person :personList)
+        for(Person person : personList)
         {
             if(person.getAge() > 15 && person.getName().startsWith("E"))
             {
@@ -40,11 +53,20 @@ public class FilterSortMapExample
             }
         }
 
+        personList.stream()
+                .filter(person -> person.getAge() > 1)
+                .sorted(Comparator.comparing(Person::getAge).reversed())
+                .map(Person::getAge)
+                .forEach(System.out::println);
+
 
 
         //filter  Stream<T> -> Stream<T>
         //map  Stream<T> -> Stream<T>
         //sort  Stream<T> -> Stream<T>
+
+        //intermediate functions
+        //terminal functions
 
     }
 
