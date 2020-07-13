@@ -4,6 +4,7 @@ import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.maxBy;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import com.ahmet.Person;
@@ -32,9 +33,9 @@ public class MaxByMinByExample
 
 
       String oldestPersonsName = personList.stream()
-                .collect(collectingAndThen(
-                        maxBy((a,b) -> a.getAge().compareTo(b.getAge())),
-                        p -> p.map(Person::getName).orElse("")));
+              .collect(maxBy(Comparator.comparing(a -> a.getAge())))
+              .map(Person::getName)
+              .orElse("");
 
         System.out.println(oldestPersonsName);
     }
