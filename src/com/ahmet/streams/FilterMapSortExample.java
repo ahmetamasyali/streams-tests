@@ -76,7 +76,7 @@ public class FilterMapSortExample
         //terminal functions  -> foreach,reduce,collect,sum,count
 
         //dont!
-        personList.stream().filter(person -> person.getAge() > 1).sorted(Comparator.comparing(Person::getAge).reversed()).map(Person::getAge).forEach(System.out::println);
+        personList.stream().filter(person -> person.getAge() > 1).sorted(Comparator.comparing(Person::getAge).reversed()).map(Person::getAge);
 
     }
 
