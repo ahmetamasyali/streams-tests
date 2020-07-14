@@ -22,9 +22,6 @@ public class MapFlatMapExample
 
         List<List<Person>> kureList = List.of(kurumsal, finans);
 
-        kureList.forEach(System.out::println);
-
-
         //map flatten
 
         kureList.stream()

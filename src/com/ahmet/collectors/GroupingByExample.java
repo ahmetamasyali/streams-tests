@@ -24,21 +24,7 @@ public class GroupingByExample
 
         List<Person> personList = Arrays.asList(person1, person2, person3, person4, person5);
 
-        Map<String, Set<Integer>> nameMap = new HashMap<>();
-        for(Person person : personList)
-        {
-            if(!nameMap.containsKey(person.getName()))
-            {
-                nameMap.put(person.getName(), new HashSet<>());
-            }
 
-            nameMap.get(person.getName()).add(person.getAge());
-        }
-
-        for(String key : nameMap.keySet())
-        {
-            System.out.println("name :"+ key + ": " + nameMap.get(key));
-        }
 
         //groupingBy (Lambda, Collector)
 
@@ -48,7 +34,8 @@ public class GroupingByExample
 
         Map<String, Set<Integer>> nameMapStream = personList.stream()
                 .collect(groupingBy(Person::getName,
-                        mapping(Person::getAge, toSet())));
+                        mapping(Person::getAge,
+                                filtering( a -> a<60, toSet()))));
 
         nameMapStream.forEach((name, ageSet) -> System.out.println("name :"+ name + ": " + ageSet));
     }

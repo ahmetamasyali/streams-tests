@@ -23,17 +23,6 @@ public class ReduceExample
 
         //En yaşlı kişinin ismini yaz
 
-        Person oldestPerson = null;
-        Integer maxAge = Integer.MIN_VALUE;
-        for(Person person :personList)
-        {
-            if(person.getAge() > maxAge)
-            {
-                maxAge = person.getAge();
-                oldestPerson = person;
-            }
-        }
-        System.out.println(oldestPerson.getName());
 
 
 

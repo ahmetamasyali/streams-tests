@@ -8,14 +8,7 @@ public class AnonymousInnerClass
         //functional programming'e ilk adım
         //herhangi bir class'a ait olmayan fonksiyon yaratmamıza imkan verir
 
-        Runnable runnable = new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                System.out.println("Hello World");
-            }
-        };
+        Runnable runnable = () -> System.out.println("Hello World");
 
         runnable.run();
 

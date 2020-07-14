@@ -50,13 +50,6 @@ public class FilterMapSortExample
 
         //yaşı 15 ten büyük olanlar ve ismi E ile başlayanların yaşı
 
-        for(Person person : personList)
-        {
-            if(person.getAge() > 15 && person.getName().startsWith("E"))
-            {
-                System.out.println(person.getAge());
-            }
-        }
 
 
 
@@ -76,7 +69,10 @@ public class FilterMapSortExample
         //terminal functions  -> foreach,reduce,collect,sum,count
 
         //dont!
-        personList.stream().filter(person -> person.getAge() > 1).sorted(Comparator.comparing(Person::getAge).reversed()).map(Person::getAge);
+        personList.stream()
+                .filter(person -> person.getAge() > 1)
+                .sorted(Comparator.comparing(Person::getAge).reversed())
+                .map(Person::getAge);
 
     }
 

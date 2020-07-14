@@ -15,32 +15,21 @@ public class StreamsPerformance2
         List<Integer> numberList = IntStream.range(0 , 10000000)
                 .boxed().collect(Collectors.toCollection(ArrayList::new));
 
-        Timer.withTime(() -> {
-            long count=0;
-            for(Integer num : numberList)
-            {
-                //System.out.println("checking number: " + integer);
-                if(isEven(num) && isBiggerThenNine(num))
-                {
-                    count += 1;
-                }
-            }
-            System.out.println(count);
-        });
+
 
         //Paralel Streams
 
         // More Cpu
         // More Memory
-        //More Thread - Thread Pool
+        // More Thread - Thread Pool
 
 
-//        Timer.withTime(() -> {
-//            System.out.println(numberList.stream()
-//                    .filter(StreamsPerformance2::isEven)
-//                    .filter(StreamsPerformance2::isBiggerThenNine)
-//                    .count());
-//            });
+        Timer.withTime(() -> {
+            System.out.println(numberList.parallelStream()
+                    .filter(StreamsPerformance2::isEven)
+                    .filter(StreamsPerformance2::isBiggerThenNine)
+                    .count());
+            });
 
 
     }

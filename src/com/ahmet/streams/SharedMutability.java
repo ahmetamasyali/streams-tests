@@ -15,12 +15,17 @@ public class SharedMutability
 
         // ilk 1000 asal sayıyı bir set'e aktar
 
-        Set<Integer> primeNumbersSet = new HashSet<>();
-
-        //dont
-        numbers.filter(SharedMutability::isPrime)
+        Set<Integer> primeNumbersSet = numbers.parallel()
+                .filter(SharedMutability::isPrime)
                 .limit(1000)
-                .forEach(primeNumbersSet::add);
+                .reduce(new HashSet<>(), (set,b) -> {
+                    set = new HashSet<>(set);
+                    set.add(b);
+                    return set;
+                }, (set1,set2) -> {
+                    set1.addAll(set2);
+                    return set1;
+                });
 
         System.out.println("Count : " + primeNumbersSet.size());
 

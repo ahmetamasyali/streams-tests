@@ -18,13 +18,6 @@ public class FilterOrExample
         List<Person> personList = Arrays.asList(person1, person2, person3, person4);
 
 
-        Predicate<Person> predicate = Person::isAgeEven;
-
-        predicate = predicate.or(p -> p.getName().startsWith("U"));
-
-        personList.stream()
-                .filter(predicate)
-                .forEach(System.out::println);
 
         //Predicate.not
 

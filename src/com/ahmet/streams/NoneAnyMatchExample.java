@@ -17,16 +17,9 @@ public class NoneAnyMatchExample
         List<Person> personList = List.of(person1, person2, person3, person4);
 
 
-        boolean any20YearsOldUtkuExit = false;
-
-        for(Person person : personList)
-        {
-            if(person.getAge() == 20 && "Utku".equals(person.getName()))
-            {
-                any20YearsOldUtkuExit = true;
-                break;
-            }
-        }
+        boolean any20YearsOldUtkuExit = personList.stream()
+                .filter(p -> p.getAge() == 20)
+                .anyMatch(p -> p.getName().equals("Utku"));
         System.out.println(any20YearsOldUtkuExit);
 
 

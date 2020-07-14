@@ -20,7 +20,7 @@ public class StreamsPerformance3
         List<Person> personList = List.of(person1, person2, person3, person4, person5);
 
         //parallel
-        Timer.withTime( () ->  personList.stream()
+        Timer.withTime( () ->  personList.parallelStream()
                 .map(StreamsPerformance3::heavyFunction)
                 .forEach(System.out::println));
 

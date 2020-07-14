@@ -38,7 +38,7 @@ public class ThenCollectingAndThenExample
         //filtering (Lambda, Collector)
 
         Map<String, Long> countByNames = personList.stream()
-                .collect(groupingBy(Person::getName, counting()));
+                .collect(groupingBy(Person::getName, collectingAndThen(counting(), c -> c*2)));
 
         System.out.print(countByNames);
 

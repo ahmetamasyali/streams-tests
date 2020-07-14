@@ -3,7 +3,9 @@ package com.ahmet.collectors;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+import static java.util.stream.Collectors.*;
 
 import com.ahmet.Person;
 
@@ -23,31 +25,21 @@ public class CollectExamples
 
         personList.stream()
                 .map(Person::getName)
-                .collect(Collectors.toList());
+                .collect(toUnmodifiableList());
 
         //toSet
 
         //toUnmodifyableList
 
-        personList.stream()
-                .collect(Collectors.toMap(Person::getName, Person::getAge));
-        //toMap
-
-        int sum = personList.stream()
-                .map(Person::getAge)
-                .collect(Collectors.summingInt(Integer::intValue));
-        //sum
-
-        System.out.println(sum);
 
 
         System.out.println(personList.stream()
                 .map(Person::getName)
-                .collect(Collectors.joining(",")));
+                .collect(joining(",")));
 
         personList.stream()
                 .map(Person::getName)
-                .collect(Collectors.counting());
+                .collect(counting());
         //count
     }
 
